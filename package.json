@@ -1,0 +1,9 @@
+{
+  "name": "school-chess-club",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Modern School Chess Club website with a small Node backend.",
+  "scripts": {
+    "start": "node server.js"
+  }
+}
