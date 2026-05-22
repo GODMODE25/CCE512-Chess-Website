@@ -11,6 +11,13 @@ Welcome to the School Chess Club Website project! This is a simple, modern, and 
 - **Interactive Statistics**: Animated counters for displaying club statistics.
 - **Gallery & Member Highlights**: Showcases the community activities and members.
 
+## Screenshots
+
+<div align="center">
+  <img src="screenshots/homepage_light.png" alt="Homepage Light Mode" width="45%"/>
+  <img src="screenshots/homepage_dark.png" alt="Homepage Dark Mode" width="45%"/>
+</div>
+
 ## Tech Stack
 
 - **Frontend**: HTML5, CSS3, Vanilla JavaScript

@@ -703,6 +703,41 @@
                 display: grid;
             }
         }
+
+        .scroll-top-btn {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 46px;
+            height: 46px;
+            border-radius: 50%;
+            background: var(--brand);
+            color: #ffffff;
+            border: none;
+            box-shadow: var(--shadow);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.4rem;
+            font-weight: 800;
+            z-index: 100;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(20px);
+            transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease, background 0.3s ease;
+        }
+
+        .scroll-top-btn.visible {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .scroll-top-btn.visible:hover {
+            background: var(--brand-strong);
+            transform: translateY(-4px);
+        }
     </style>
 </head>
 <body>
@@ -931,6 +966,8 @@
         </div>
     </footer>
 
+    <button id="scrollTopBtn" class="scroll-top-btn" aria-label="Scroll to top" title="Scroll to top">↑</button>
+
     <script>
         const navLinks = document.querySelector("#navLinks");
         const menuToggle = document.querySelector("#menuToggle");
@@ -1066,6 +1103,22 @@
                 contactForm.reset();
                 formStatus.textContent = "Saved on this browser. Start the backend server to store messages centrally.";
             }
+        });
+
+        const scrollTopBtn = document.getElementById("scrollTopBtn");
+        window.addEventListener("scroll", () => {
+            if (window.scrollY > 300) {
+                scrollTopBtn.classList.add("visible");
+            } else {
+                scrollTopBtn.classList.remove("visible");
+            }
+        });
+
+        scrollTopBtn.addEventListener("click", () => {
+            window.scrollTo({
+                top: 0,
+                behavior: "smooth"
+            });
         });
     </script>
 </body>
